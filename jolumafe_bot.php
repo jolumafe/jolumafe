@@ -2,8 +2,6 @@
 define('BOT_TOKEN', '279995367:AAEIFAatCllDb9Hkcd_OF087vL4dBdb1Wy8');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
-checkJSON($chatID,$update);
-
 function checkJSON($chatID,$update){
 	$myFile = "log.txt";
 	$updateArray = print_r($update,TRUE);
@@ -24,6 +22,7 @@ $reply =  sendMessage();
 // send reply
 $sendto =API_URL."sendmessage?chat_id=".$chatID."&text=".$reply;
 file_get_contents($sendto);
+checkJSON($chatID,$update);
 
 function sendMessage(){
 $message = "I am a baby bot.";
