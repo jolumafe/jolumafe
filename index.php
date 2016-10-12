@@ -11,11 +11,6 @@ function checkJSON($chatIDs,$updates){
 	fclose($fh);
 	}
 
-function sendMessage(){
-	$message = "I am Jolumafe's bot.";
-	return $message;
-	}
-
 // read incoming info and grab the chatID
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
@@ -25,7 +20,7 @@ $chatID = $update["message"]["chat"]["id"];
 checkJSON($chatID,$update);
 
 // compose reply
-$reply =  sendMessage();
+$reply =  "El chat id es ".$chatID;
 		
 // send reply
 $sendto =API_URL."sendmessage?chat_id=".$chatID."&text=".$reply;
