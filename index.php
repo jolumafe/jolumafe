@@ -3,11 +3,11 @@ define('BOT_TOKEN', '279995367:AAEIFAatCllDb9Hkcd_OF087vL4dBdb1Wy8');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
 function checkJSON($chatIDs,$updates){
-	$myFile = "log.txt";
+	$myFile = "log2.txt";
 	$updateArray = print_r($updates,TRUE);
 	$fh = fopen($myFile, 'a') or die("can't open file");
 	fwrite($fh, $chatIDs ."\n\n");
-	fwrite($fh, $updateArray."\n\n");
+	fwrite($fh, $updateArray."\n\n update array");
 	fclose($fh);
 	}
 
